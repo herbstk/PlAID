@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pl.aid</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Pl.aid</h1>
+      <div class="file-input-container">
+        <input type="file" id="csvFile" accept=".csv" />
+        <label for="csvFile">Upload Protocol (CSV)</label>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="plates-container">
+        <div class="plate-section">
+            <h2 id="sourcePlateHeading">Source Plate: <span id="sourcePlateName">-</span></h2>
+          <div id="sourcePlate" class="plate"></div>
+        </div>
+        <div class="plate-section">
+          <h2 id="targetPlateHeading">Target Plate: <span id="targetPlateName">-</span></h2>
+          <div id="targetPlate" class="plate"></div>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <div class="step-info">
+          <h3>Step Information</h3>
+          <div id="stepInfo" class="info-box">
+            Please upload a CSV file to begin
+          </div>
+        </div>
+
+        <div class="navigation">
+          <button id="prevStep" disabled>Previous Step</button>
+          <span id="stepCounter">Step 0 of 0</span>
+          <button id="nextStep" disabled>Next Step</button>
+        </div>
+      </div>
+
+      <div class="protocol-table">
+        <h3>Protocol Steps</h3>
+        <div class="table-container">
+          <table id="protocolTable">
+            <thead>
+              <tr>
+                <th>Step</th>
+                <th>Source Plate</th>
+                <th>Well</th>
+                <th>Target Plate</th>
+                <th>Well</th>
+                <th>Additional Info</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+
+    <div id="plateChangeModal" class="modal">
+      <div class="modal-content">
+        <h2>Plate Change Required</h2>
+        <p id="plateChangeMessage"></p>
+        <button id="confirmPlateChange">Confirm Change</button>
+      </div>
+    </div>
+  </body>
+</html>
